@@ -1,17 +1,13 @@
 import React, { useContext } from "react";
-import "./Services.css";
-import Card from "../Card/Card";
+import "./Projects.css";
 import HeartEmoji from "../../img/heartemoji.png";
 import Glasses from "../../img/glasses.png";
 import Humble from "../../img/humble.png";
 import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
-import Resume from './roopamresume.pdf';
-import TA from './TA.pdf'
-import RD from './RD.pdf'
-import DSA from './DSA.pdf'
+import ProjectCard from "../ProjectCard/ProjectCard";
 
-const Services = () => {
+const Projects = () => {
   // context
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
@@ -23,19 +19,16 @@ const Services = () => {
   };
 
   return (
-    <div className="services" id="services">
+    <div className="services" id="projects">
       {/* left side */}
       <div className="awesome">
         {/* dark mode */}
-        <span style={{ color: darkMode ? "white" : "" }}>My Skills</span>
-        <span>Exprience</span>
+        <span style={{ color: darkMode ? "white" : "" }}>My Awesome</span>
+        <span>Projects</span>
         <span>
-        "I am a skilled web developer proficient in front-end and <br /> back-end development.
-          My skills include HTML, CSS, <br /> JavaScript, Python, and database management."
+        This project in web development utilizes  HTML, CSS, <br /> JavaScript,
+          Bootstrap, React.js, <br /> Django, Python, and DSA 
         </span>
-        <a href={Resume} download>
-          <button className="button s-button">Download CV</button>
-        </a>
         <div className="blur s-blur1" style={{ background: "#ABF1FF94" }}></div>
       </div>
       {/* right */}
@@ -46,11 +39,10 @@ const Services = () => {
           whileInView={{ left: "14rem" }}
           transition={transition}
         >
-          <Card
+          <ProjectCard
             emoji={HeartEmoji}
-            heading={"Front End Developer"}
-            detail={"HTML, CSS, JavaScript, React.JS, Redux, Git And GitHub"}
-            certificate={RD}
+            heading={"T - Shirt Selling Website"}
+            detail={"Our T-shirt selling website project utilizes Django as the backend framework SQLite as the database, and React.js and Bootstrap for the frontend"}
           />
         </motion.div>
         {/* second card */}
@@ -59,10 +51,10 @@ const Services = () => {
           whileInView={{ left: "-4rem" }}
           transition={transition}
         >
-          <Card
+          <ProjectCard
             emoji={Glasses}
-            heading={"Back End Developer"}
-            detail={"Python, Django, SQLight, MongoDB, DSA"} certificate={DSA}
+            heading={"My Prortfolio"}
+            detail={"I have created a personal portfolio using HTML, CSS, JavaScript, and React.js, showcasing my skills, projects, and experiences."}
           />
         </motion.div>
         {/* 3rd */}
@@ -71,13 +63,12 @@ const Services = () => {
           whileInView={{ left: "12rem" }}
           transition={transition}
         >
-          <Card
+          <ProjectCard
             emoji={Humble}
-            heading={"Teaching Assistance at Coding Ninjas"}
+            heading={"NewsApp"}
             detail={
-              "Task-Taking doubt sessions,Debugging codes,Helping students in assignments"
+              "News app aggregating live updates from multiple websites, providing a convenient platform for comprehensive news access."
             }
-            certificate={TA}
             color="rgba(252, 166, 31, 0.45)"
           />
         </motion.div>
@@ -90,4 +81,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Projects;

@@ -20,9 +20,16 @@
   display: flex;
   gap: 2rem;
 }
-
+.f-content span{
+  font-size: 18px;
+  font-family: sans-serif;
+  border-bottom: 1px solid var(--orange);
+}
 @media screen and (max-width: 480px){
   .f-content{
     transform: scale(.5);
+  }
+  .f-content span{
+    font-size: 14px;
   }
 }
